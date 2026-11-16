@@ -1,5 +1,7 @@
 # Athena – kom igång
 
+**Appen:** <https://echvibez.github.io/athena/> – publiceras automatiskt från `main` (se `.github/workflows/deploy.yml`).
+
 Athena är din plugg-app med två valv, **Fysik** och **Matte** (plus en **Inkorg** för osorterat).
 Allt sparas först på enheten och synkas sedan via Supabase, så samma anteckningar finns på
 laptop och mobil.
