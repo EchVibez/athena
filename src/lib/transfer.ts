@@ -107,7 +107,8 @@ async function importPackage(m: ImportManifest, files: Unzipped, progress?: (d: 
         note.pages.push(p.id)
       }
     }
-    note.links = (src.links ?? []).map((k) => keyToId.get(k)).filter((x): x is string => !!x)
+    // A key may also point at a note from an earlier package (e.g. maths linking to physics).
+    note.links = (src.links ?? []).map((k) => keyToId.get(k) ?? noteByImportKey(k)?.id).filter((x): x is string => !!x)
   }
   await putImported(
     fresh.map((f) => f.note),
